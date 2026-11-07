@@ -9,7 +9,6 @@ struct Objeto {
 };
 
 void ordenar(Objeto objetos[], int n) {
-    // Ordenar de mayor a menor según valor/peso
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - 1 - i; j++) {
             if (objetos[j].relacion < objetos[j + 1].relacion) {
@@ -31,7 +30,7 @@ void mochila(Objeto objetos[], int n, float capacidad) {
     for (int i = 0; i < n; i++) {
         if (capacidad > 0) {
             if (objetos[i].peso <= capacidad) {
-                // Tomar el objeto completo
+                
                 capacidad = capacidad - objetos[i].peso;
                 valorTotal = valorTotal + objetos[i].valor;
 
@@ -39,7 +38,7 @@ void mochila(Objeto objetos[], int n, float capacidad) {
                      << ": completo"
                      << endl;
             } else {
-                // Tomar solamente una fraccion
+
                 float fraccion = capacidad / objetos[i].peso;
                 float valorObtenido = objetos[i].valor * fraccion;
 
